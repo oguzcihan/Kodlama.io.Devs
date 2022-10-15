@@ -40,7 +40,7 @@ namespace Application.Features.Languages.Profiles
             #region Updated Language
 
             CreateMap<Language, LanguageUpdatedDto>().ReverseMap();
-            CreateMap<Language, UpdateLanguageCommand>();
+            CreateMap<Language, UpdateLanguageCommand>().ReverseMap();
 
             #endregion
 
