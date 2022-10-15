@@ -36,6 +36,7 @@ namespace Application.Features.Languages.Commands.UpdateLanguage
                 await _languageBusinessRules.LanguageNameCanNotBeDuplicatedWhenInserted(request.Name);
 
                 Language mappedLanguage = _mapper.Map<Language>(request);
+                //Language? language = await _languageRepository.GetAsync(v => v.Id == request.Id);
                 Language updatedLanguage = await _languageRepository.UpdateAsync(mappedLanguage);
                 LanguageUpdatedDto updateLanguageDto = _mapper.Map<LanguageUpdatedDto>(updatedLanguage);
                 return updateLanguageDto;
